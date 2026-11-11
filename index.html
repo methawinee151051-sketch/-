@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolios | แฟ้มสะสมผลงาน</title>
+    <style>
+        :root {
+            --primary-color: #0077b6;
+            --secondary-color: #00b4d8;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Sarabun', sans-serif, Tahoma;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #023e8a, #00b4d8);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation Tab */
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .tab-button {
+            padding: 12px 28px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            background-color: #e0e0e0;
+            color: #555;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-button.active, .tab-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 119, 182, 0.3);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px 50px 20px;
+        }
+
+        .portfolio-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .portfolio-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Grid Display for Images */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .card-body {
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .card-body h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>เเฟ้มสะสมผลงาน (PORTFOLIO)</h1>
+        <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์ รัชมังคลาภิเษก</p>
+    </header>
+
+    <div class="tab-container">
+        <button class="tab-button active" onclick="switchTab('student1')">นางสาวเมธาวินี บำรุงภักดิ์</button>
+        <button class="tab-button" onclick="switchTab('student2')">นางสาวณฤดี สุขเกษม</button>
+    </div>
+
+    <div class="container">
+        <!-- Student 1 Portfolio -->
+        <div id="student1" class="portfolio-content active">
+            <h2 style="text-align: center; margin-bottom: 20px; color: #023e8a;">
+                สาขาการศึกษาปฐมวัย - คณะครุศาสตร์
+            </h2>
+            <div class="gallery-grid">
+                <div class="card">
+                    <img src="image_bda2dd.jpg" alt="หน้าปก - เมธาวินี">
+                    <div class="card-body"><h3>หน้าปก (Cover)</h3></div>
+                </div>
+                <div class="card">
+                    <img src="image_8f6d66.jpg" alt="ประวัติส่วนตัว - เมธาวินี">
+                    <div class="card-body"><h3>ประวัติส่วนตัว (Profile)</h3></div>
+                </div>
+                <div class="card">
+                    <img src="image_da09db.jpg" alt="เหตุผลที่อยากเข้าคณะนี้ - เมธาวินี">
+                    <div class="card-body"><h3>เหตุผลที่อยากเข้าศึกษา (Statement of Purpose)</h3></div>
+                </div>
+                <div class="card">
+                    <img src="image_f6b455.jpg" alt="กิจกรรมที่ภาคภูมิใจ - เมธาวินี">
+                    <div class="card-body"><h3>กิจกรรมที่ภาคภูมิใจ (Activities)</h3></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student 2 Portfolio -->
+        <div id="student2" class="portfolio-content">
+            <h2 style="text-align: center; margin-bottom: 20px; color: #023e8a;">
+                สาขาวิชาเอกพลศึกษา - คณะครุศาสตร์
+            </h2>
+            <div class="gallery-grid">
+                <div class="card">
+                    <img src="image_d182f5.jpg" alt="หน้าปก - ณฤดี">
+                    <div class="card-body"><h3>หน้าปก (Cover)</h3></div>
+                </div>
+                <div class="card">
+                    <img src="image_f910cc.jpg" alt="ประวัติส่วนตัว - ณฤดี">
+                    <div class="card-body"><h3>ประวัติส่วนตัว (Profile)</h3></div>
+                </div>
+                <div class="card">
+                    <img src="image_41d9df.jpg" alt="เหตุผลที่อยากเข้าคณะนี้ - ณฤดี">
+                    <div class="card-body"><h3>เหตุผลที่อยากเข้าศึกษา (Statement of Purpose)</h3></div>
+                </div>
+                <div class="card">
+                    <img src="image_8f6d66.jpg" alt="กิจกรรมสภานักเรียน - ณฤดี">
+                    <div class="card-body"><h3>กิจกรรมของสภานักเรียน (Activities SC)</h3></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© Portfolio Website | สร้างด้วย HTML & CSS สำหรับ GitHub Pages</p>
+    </footer>
+
+    <script>
+        function switchTab(studentId) {
+            // Hide all portfolio content
+            const contents = document.querySelectorAll('.portfolio-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Deactivate all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Show selected student content and set button active
+            document.getElementById(studentId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
